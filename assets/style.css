@@ -1,0 +1,40 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3 {
+  text-align: center;
+  margin: 0; }
+
+#hero {
+  background-image: url("imgs/black-keyboard.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.hero_center {
+  margin: auto; }
+  .hero_center .hero_title {
+    margin: 25px 0;
+    font-size: 75px; }
+  .hero_center h1 {
+    font-size: 65px;
+    color: white;
+    text-shadow: 0 2px rgba(0, 0, 0, 0.2); }
+  .hero_center h2 {
+    font-size: 45px;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px rgba(0, 0, 0, 0.2); }

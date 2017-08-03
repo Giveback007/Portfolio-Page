@@ -1,3 +1,0 @@
--Redo page without bootstrap
--Redo whole page
--Add latest projects
