@@ -1,0 +1,32 @@
+#nav
+  display: flex
+  justify-content: flex-end
+  background: #2D65A0
+  padding: 0 10px
+  span
+    font-size: 25px
+    padding: 15px 2px
+    color: #729ECB
+
+.nav_btn
+  padding: 15px 10px
+  font-size: 25px
+  color: white
+  border: solid #2D65A0
+  // background: #2E659E
+  &:hover
+    background-color: #13508F
+  &:active
+    background-color: #599DDA
+
+.nav_bars
+  display: none
+
+@media screen and (max-width: 500px)
+  #nav
+    span
+      display: none
+  .nav_btn
+    display: none
+  .nav_bars
+    display: block
