@@ -27,9 +27,10 @@ $(document).ready(function() {
  $('.nav_anchor').click(function(x) {
     var linkHref = $(this).attr('href');
     x.preventDefault();
+    if (navIsOn) {toggleNav()} // - toggle off nav
     $('html, body').delay(150).animate({
      scrollTop: $(linkHref).offset().top - navHeight
-    }, 1200);
+   }, 800);
  });
 });
 /* Smooth Scroll End */
