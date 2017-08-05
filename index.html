@@ -151,7 +151,68 @@
     </section>
     <!-- portfolio end -->
 
+    <section id='contact'>
+      <!-- contact form start -->
+      <section id='form'>
+        <h2>Contact Me</h2>
+        <aside class='form_aside' id='form_aside'>
+          <p>I would love to hear from you</p>
+          <p>Write in your name and your message and I will get back in touch with you</p>
+        </aside>
 
+        <form id="gform" method="POST"
+        action="https://script.google.com/macros/s/AKfycbyp88RmK0L6QDqbpTq0zjd3kYBSApenOwu_BVsVl2DyzE2NDso6/exec">
+          <fieldset>
+            <!-- <label for="name">Name: </label> -->
+            <input id="name" name="name" placeholder="Name *" />
+          </fieldset>
+
+          <fieldset>
+            <!-- <label for="message">Message: </label> -->
+            <textarea id="message" name="message" rows="10"
+            placeholder="Write in your message here, tell me why you are contacting me, how can I help you, and I will get back in touch with you"></textarea>
+          </fieldset>
+
+          <fieldset>
+            <label for="email"><em>Your</em> Email Address:</label>
+            <input id="email" name="email" type="email" value=""
+            required placeholder="name@email.you"/>
+            <span id="email-invalid" style="display:none">
+              Must be a valid email address
+            </span>
+          </fieldset>
+
+          <fieldset>
+            <label for="tel"><em>Your</em> Phone:</label>
+            <input id="tel" name="tel" type="tel" value=""
+            required placeholder="000-000-0000"/>
+          </fieldset>
+
+          <button><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Send</button>
+        </form>
+
+        <!-- Thankyou Message People See when they submit the form: -->
+        <div style="display:none;" id="thankyou_message">
+          <h2><em>Thanks</em> for contacting us!
+            We will get back to you soon!</h2>
+        </div>
+
+        <!-- Submit the Form to Google Using "AJAX" -->
+        <script data-cfasync="false" type="text/javascript"
+          src="assets/form-submission-handler.js">
+        </script>
+      </section>
+      <!-- contact form end -->
+
+        <section id='social'>
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <i class="fa fa-codepen" aria-hidden="true"></i>
+          <i class="fa fa-free-code-camp" aria-hidden="true"></i>
+          <i class="fa fa-github" aria-hidden="true"></i>
+      </section>
+
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="assets/index.js"></script>
