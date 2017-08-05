@@ -33,7 +33,6 @@ h1, h2, h3, h4 {
 .hero_center {
   margin: auto;
   width: 100%;
-  background: rgba(128, 128, 128, 0.2);
   padding: 25px 0;
   border-radius: 10px; }
   .hero_center h2 {
@@ -43,7 +42,7 @@ h1, h2, h3, h4 {
     .hero_center h2 span {
       font-size: 45px; }
   .hero_center h3 {
-    font-size: 55px; }
+    font-size: 60px; }
 
 .hero_title {
   display: -webkit-box;
@@ -66,10 +65,9 @@ h1, h2, h3, h4 {
 .hero_arrow-down {
   text-align: center;
   font-size: 55px;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.05); }
+  width: 100%; }
   .hero_arrow-down:hover {
-    background-color: rgba(255, 255, 255, 0.15); }
+    background-color: rgba(255, 255, 255, 0.1); }
   .hero_arrow-down p {
     font-size: 25px;
     margin: 15px 0 0 0; }
@@ -83,7 +81,7 @@ h1, h2, h3, h4 {
     .hero_center h2 span {
       font-size: 25px; }
   .hero_center h3 {
-    font-size: 40px; }
+    font-size: 50px; }
   .hero_title h1 {
     font-size: 45px; }
   .hero_title img {
@@ -93,6 +91,12 @@ h1, h2, h3, h4 {
 #nav {
   background: #2D65A0;
   padding: 0 10px; }
+
+.nav_fixed-on {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; }
 
 .nav_btn-wrap {
   display: -webkit-box;
@@ -129,6 +133,9 @@ h1, h2, h3, h4 {
 .nav_hr {
   display: none;
   margin: 0; }
+
+.nav_ghost {
+  height: 64px; }
 
 @media screen and (max-width: 550px) {
   .nav_btn-wrap {
