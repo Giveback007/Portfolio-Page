@@ -9,14 +9,14 @@ function toggleNav() {
   var hr = document.querySelector('.nav_hr');
 
   if (navIsOn) {
-    btns.forEach(function (x) {
-      return x.classList.add('nav_btn-on');
-    });
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.add('nav_btn-on');
+    }
     hr.classList.add('nav_btn-on');
   } else {
-    btns.forEach(function (x) {
-      return x.classList.remove('nav_btn-on');
-    });
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.remove('nav_btn-on');
+    }
     hr.classList.remove('nav_btn-on');
   }
 }
