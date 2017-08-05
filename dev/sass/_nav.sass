@@ -1,32 +1,53 @@
 #nav
-  display: flex
-  justify-content: flex-end
   background: #2D65A0
   padding: 0 10px
-  span
-    font-size: 25px
-    padding: 15px 2px
-    color: #729ECB
+
+
+.nav_btn-wrap
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-end
+
+.nav_toggle
+  display: none
 
 .nav_btn
-  padding: 15px 10px
+  padding: 15px 20px
   font-size: 25px
   color: white
   border: solid #2D65A0
   // background: #2E659E
   &:hover
     background-color: #13508F
+    text-decoration: underline
   &:active
     background-color: #599DDA
 
-.nav_bars
-  display: none
+.nav_div-line
+  font-size: 25px
+  padding: 15px 2px
+  color: #729ECB
 
-@media screen and (max-width: 500px)
-  #nav
-    span
-      display: none
+.nav_hr
+  display: none
+  margin: 0
+
+@media screen and (max-width: 550px)
+  .nav_btn-wrap
+    flex-direction: column
+
+  .nav_div-line
+    display: none
+
   .nav_btn
     display: none
-  .nav_bars
+    text-align: center
+
+  .nav_btn-on
     display: block
+
+  .nav_toggle
+    margin: auto
+    display: block
+    padding: 15px 30px
+    text-decoration: none !important
