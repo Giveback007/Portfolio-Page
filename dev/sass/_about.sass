@@ -1,11 +1,44 @@
 #about
-  padding: 35px
+  padding: 20px 30px
   margin: auto
-  max-width: 800px
-  background: lightgrey
-  // min-height: 100vh
-  h1
-    font-size: 55px
-
+  max-width: 750px
+  background: rgba(0,0,0,0.045)
+  h2
+    font-size: 42px
+    color: #CBAB58
+    margin-top: 15px
+  h3
+    font-size: 28px
+    color: #CBAB58
+    i
+      color: #3B6980
   h4
+    font-size: 20px
     margin: 20px
+  p, li
+    font-size: 18px
+    color: #464646
+
+.about_wrap
+  background: #E9F1F5
+  box-shadow:  1px 1px 4px black
+
+.about_top-sect
+  display: flex
+  flex-wrap: wrap
+  .about_point
+    flex: 1
+    margin: 20px
+
+.about_bot-sect
+  padding: 20px
+  width: 450px
+  margin: auto
+
+@media screen and (max-width: 550px)
+  #about
+    padding: 15px 0 0 0
+  .about_top-sect
+    flex-direction: column
+  .about_bot-sect
+    width: 100%

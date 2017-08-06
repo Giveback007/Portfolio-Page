@@ -1,6 +1,7 @@
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif; }
 
 body {
   margin: 0;
@@ -13,6 +14,14 @@ a {
 h1, h2, h3, h4 {
   text-align: center;
   margin: 0; }
+
+.base_large-btn {
+  margin: auto;
+  width: 100px;
+  height: 50px; }
+  .base_large-btn button {
+    width: 100%;
+    height: 100%; }
 
 #hero {
   background-image: url("imgs/black-keyboard.jpg");
@@ -65,9 +74,15 @@ h1, h2, h3, h4 {
 .hero_arrow-down {
   text-align: center;
   font-size: 55px;
-  width: 100%; }
+  width: 100%;
+  -webkit-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s; }
   .hero_arrow-down:hover {
-    background-color: rgba(255, 255, 255, 0.1); }
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-transition: background-color 0.75s;
+    -o-transition: background-color 0.75s;
+    transition: background-color 0.75s; }
   .hero_arrow-down p {
     font-size: 25px;
     margin: 15px 0 0 0; }
@@ -89,8 +104,9 @@ h1, h2, h3, h4 {
     margin: 5px; } }
 
 #nav {
-  background: #2D65A0;
-  padding: 0 10px; }
+  background: #3B6A81;
+  padding: 0 10px;
+  width: 100%; }
 
 .nav_fixed-on {
   position: fixed;
@@ -116,26 +132,32 @@ h1, h2, h3, h4 {
 
 .nav_btn {
   padding: 15px 20px;
-  font-size: 25px;
+  font-size: 20px;
   color: white;
-  border: solid #2D65A0; }
+  margin: 2px;
+  -webkit-transition: background-color 0.35s;
+  -o-transition: background-color 0.35s;
+  transition: background-color 0.35s; }
   .nav_btn:hover {
-    background-color: #13508F;
-    text-decoration: underline; }
+    background-color: #22536A;
+    border-radius: 5px;
+    -webkit-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    transition: background-color 1s; }
   .nav_btn:active {
-    background-color: #599DDA; }
+    background-color: #91B0C0; }
 
 .nav_div-line {
   font-size: 25px;
   padding: 15px 2px;
-  color: #729ECB; }
+  color: #CB9658; }
 
 .nav_hr {
   display: none;
   margin: 0; }
 
 .nav_ghost {
-  height: 64px; }
+  height: 58px; }
 
 @media screen and (max-width: 550px) {
   .nav_btn-wrap {
@@ -148,37 +170,88 @@ h1, h2, h3, h4 {
     display: none; }
   .nav_btn {
     display: none;
-    text-align: center; }
+    height: 0px;
+    text-align: center;
+    -webkit-transition: height 1s;
+    -o-transition: height 1s;
+    transition: height 1s; }
   .nav_btn-on {
-    display: block; }
+    display: block;
+    height: inherit;
+    -webkit-transition: height 1s;
+    -o-transition: height 1s;
+    transition: height 1s; }
   .nav_toggle {
     margin: auto;
+    height: initial;
     display: block;
     padding: 15px 30px;
     text-decoration: none !important; } }
 
 #about {
-  padding: 35px;
+  padding: 20px 30px;
   margin: auto;
-  max-width: 800px;
-  background: lightgrey; }
-  #about h1 {
-    font-size: 55px; }
+  max-width: 750px;
+  background: rgba(0, 0, 0, 0.045); }
+  #about h2 {
+    font-size: 42px;
+    color: #CBAB58;
+    margin-top: 15px; }
+  #about h3 {
+    font-size: 28px;
+    color: #CBAB58; }
+    #about h3 i {
+      color: #3B6980; }
   #about h4 {
+    font-size: 20px;
+    margin: 20px; }
+  #about p, #about li {
+    font-size: 18px;
+    color: #464646; }
+
+.about_wrap {
+  background: #E9F1F5;
+  -webkit-box-shadow: 1px 1px 4px black;
+  box-shadow: 1px 1px 4px black; }
+
+.about_top-sect {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .about_top-sect .about_point {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     margin: 20px; }
 
-#portf section {
-  margin: 30px; }
-  #portf section img {
-    width: 100px; }
+.about_bot-sect {
+  padding: 20px;
+  width: 450px;
+  margin: auto; }
 
-.portf_btn {
-  margin: auto;
-  width: 100px;
-  height: 50px; }
-  .portf_btn button {
-    width: 100%;
-    height: 100%; }
+@media screen and (max-width: 550px) {
+  #about {
+    padding: 15px 0 0 0; }
+  .about_top-sect {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .about_bot-sect {
+    width: 100%; } }
+
+#portf {
+  padding: 25px 0; }
+  #portf section {
+    margin: 30px; }
+    #portf section img {
+      width: 100px; }
 
 @media screen and (max-width: 700px) {
   .portf_iframe {
@@ -205,3 +278,6 @@ h1, h2, h3, h4 {
     margin-right: 5px; }
   .portf_code-line::after {
     margin-left: 5px; }
+
+#contact {
+  background: #E9F1F5; }
