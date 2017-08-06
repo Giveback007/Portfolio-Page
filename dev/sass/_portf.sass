@@ -1,15 +1,41 @@
 #portf
-  // background: #FFFBF2
-  padding: 25px 0
-  section
-    margin: 30px
-    img
-      width: 100px
 
-@media screen and (max-width: 700px)
-  .portf_iframe
-    width: 90%
+.portf_site-wrap
+  display: flex
+  justify-content: center
+  margin: 20px 0
+  flex-wrap: wrap
 
+.portf_site
+  margin: 15px 25px
+
+.portf_site-btn
+  width: 200px
+  height: 55px
+  margin: 5px auto 10px auto
+  button
+    font-size: 35px
+    padding: 2px
+    &:hover
+
+.portf_section
+  margin: 25px 0 0 0
+
+.portf_item-wrap
+  display: flex
+  flex-wrap: wrap
+
+.portf_item
+  width: 49.5%
+  margin: 1px auto
+  height: 150px
+  border: solid
+  background-size: cover
+  background-position: center
+
+@media screen and (max-width: 550px)
+  .portf_item
+    height: 120px
 
 .portf_code-line
     text-align: center
@@ -18,7 +44,7 @@
     &::before, &::after
       content: ''
       flex: 1
-      border-bottom: 1px solid #000
+      border-bottom: 2px solid $textMain
     &::before
       margin-right: 5px
     &::after
