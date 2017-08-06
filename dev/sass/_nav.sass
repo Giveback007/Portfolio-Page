@@ -1,7 +1,22 @@
 #nav
-  background: #3B6A81
-  padding: 0 10px
+  background: $main1
+  padding: 0 5px
   width: 100%
+  min-height: 58px
+  display: flex
+
+.nav_logo
+  color: $main2Lt1
+  font-size: 30px
+  font-weight: bold
+  padding: 8px 0
+  margin-left: 15px
+  text-shadow: 2px 2px $main1Dr1
+  span
+    font-size: 20px
+
+.nav_main
+  flex: 1
 
 .nav_fixed-on
   position: fixed
@@ -20,11 +35,11 @@
 .nav_btn
   padding: 15px 20px
   font-size: 20px
-  color: white
+  color: $main3
   margin: 2px
   transition: background-color 0.35s
   &:hover
-    background-color: #22536A
+    background-color: $main1Dr1
     border-radius: 5px
     transition: background-color 1s
   &:active
@@ -33,7 +48,7 @@
 .nav_div-line
   font-size: 25px
   padding: 15px 2px
-  color: #CB9658
+  color: $main2
 
 .nav_hr
   display: none
@@ -43,6 +58,9 @@
   height: 58px
 
 @media screen and (max-width: 550px)
+  .nav_logo
+    display: none
+
   .nav_btn-wrap
     flex-direction: column
 
@@ -51,18 +69,14 @@
 
   .nav_btn
     display: none
-    height: 0px
     text-align: center
     transition: height 1s
 
   .nav_btn-on
     display: block
-    height: inherit
-    transition: height 1s
 
   .nav_toggle
     margin: auto
-    height: initial
     display: block
     padding: 15px 30px
     text-decoration: none !important

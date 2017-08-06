@@ -1,3 +1,15 @@
+$main1: #396E7F
+$main1Dr1: #215668
+$main1Dr2: #0C3D4D
+$main1Lt1: #5C8998
+$main1Lt2: #8FB2BE
+$main2: #CCAA58
+$main2Dr1: #A78431
+$main2Lt1: #F4D790
+$main3: white
+$textMain: #464646
+$softBkrd: #E7F1F4
+
 *
   box-sizing: border-box
   font-family: 'Montserrat', sans-serif
@@ -15,10 +27,32 @@ h1, h2, h3, h4
   text-align: center
   margin: 0
 
-.base_large-btn
-  margin: auto
-  width: 100px
-  height: 50px
+h2, h3
+  color: $main2
+
+h1
+  font-size: 75px
+
+p, li
+  color: #464646
+
+.base_btn
   button
+    color: $main3
+    font-size: 22px
+    font-weight: bold
     width: 100%
     height: 100%
+    background: $main1Lt1
+    // border: solid 2px $softBkrd
+    border: none
+    border-radius: 10px
+    box-shadow: 1px 1px 3px $main1Lt2
+    transition: background-color 0.35s
+    &:hover
+      cursor: pointer
+
+      color: $main1
+      background: $main2Lt1
+
+      transition: background-color 0.5s
