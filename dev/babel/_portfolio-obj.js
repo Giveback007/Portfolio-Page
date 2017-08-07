@@ -7,7 +7,7 @@ var portf_items = [
       {"name": "Conways GoL", "img": "game-of-life.png", "site": "https://giveback007.github.io/game-of-life-react-js", "source": "https://github.com/Giveback007/game-of-life-react-js"},
       {"name": "Leaderboard", "img": "camper-leaderboard.png", "site": "Camper-Leaderboard", "source": ""},
       {"name": "Recipe Box", "img": "recipe-box.png", "site": "Recipe-Box", "source": ""},
-      {"name": "Markdown Prev", "img": "/h-rez/markdown-previewer.png", "site": "Markdown-Previewer", "source": ""}
+      {"name": "Markdown Prev", "img": "h-rez/markdown-previewer.png", "site": "Markdown-Previewer", "source": ""}
     ]
   },
   // misc
