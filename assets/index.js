@@ -1,54 +1,39 @@
-'use strict';
+"use strict";
 
-//@prepros-append babel/_portfolio-arr.js
+//@prepros-append babel/_portfolio-obj.js
 //@prepros-append babel/_nav.js
 //@prepros-append babel/_form.js
+//@prepros-append babel/_portfolio.js
 
-var portf = [
+var portf_sites = [];
+
+var portf_items = [
 // react.js
-{ name: 'React.js',
-  items: [{ name: 'Game Of Life', img: 'assets/imgs/portfolio/under_construction.jpg', site: 'https://giveback007.github.io/game-of-life-react-js', source: 'https://github.com/Giveback007/game-of-life-react-js' }, { name: 'Leaderboard', img: 'camper-leaderboard.png', site: 'Camper-Leaderboard', source: 'Camper-Leaderboard' }, { name: 'Recipe Box', img: 'recipe-box.png', site: 'Recipe-Box', source: 'Recipe-Box' }, { name: 'Markdown Prev', img: '', site: 'Markdown-Previewer', source: 'Markdown-Previewer' }]
+{ "name": "React.js",
+  "items": [{ "name": "Conways GoL", "img": "game-of-life.png", "site": "https://giveback007.github.io/game-of-life-react-js", "source": "https://github.com/Giveback007/game-of-life-react-js" }, { "name": "Leaderboard", "img": "camper-leaderboard.png", "site": "Camper-Leaderboard", "source": "" }, { "name": "Recipe Box", "img": "recipe-box.png", "site": "Recipe-Box", "source": "" }, { "name": "Markdown Prev", "img": "/h-rez/markdown-previewer.png", "site": "Markdown-Previewer", "source": "" }]
+},
+// misc
+{ "name": "Misc.",
+  "items": [{ "name": "JS Calculator", "img": "js-calculator.png", "site": "JS-Calculator", "source": "" }, { "name": "Pomodoro Timer", "img": "pomodoro.png", "site": "Pomodoro", "source": "" }, { "name": "Simon Game", "img": "simon.png", "site": "Simon-Game", "source": "" }]
+},
+// backend
+{ "name": "Node.js",
+  "items": [{ "name": "", "img": "", "site": "", "source": "" }]
+}, { "name": "JSON/AJAX api",
+  "items": [{ "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }]
+},
+// algorithm
+{ "name": "Algorithm Scripting",
+  "items": [{ "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }]
+},
+// cms
+{ "name": "CMS",
+  "items": [{ "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }]
+},
+// misc
+{ "name": "Misc.",
+  "items": [{ "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }]
 }];
-
-//,
-// // backend
-// { name: 'Backend',
-//   items: [
-//     {name: '', img: '', site: '', source: ''}
-//   ]
-// },
-// { name: 'JSON/AJAX api',
-//   items: [
-//     {name: '', img: '', site: '', source: ''},
-//     {name: '', img: '', site: '', source: ''},
-//     {name: '', img: '', site: '', source: ''},
-//     {name: '', img: '', site: '', source: ''}
-//   ]
-// },
-// // algorithm
-// { name: 'Algorithm Scripting',
-//   items: [
-//     {name: '', img: '', site: '', source: ''},
-//     {name: '', img: '', site: '', source: ''},
-//     {name: '', img: '', site: '', source: ''}
-//   ]
-// },
-// // cms
-// { name: 'CMS',
-//   items: [
-//     {name: '', img: '', site: '', source: ''},
-//     {name: '', img: '', site: '', source: ''}
-//   ]
-// },
-// // misc
-// { name: 'Misc.',
-//   items: [
-//     {name: '', img: '', site: '', source: ''},
-//     {name: '', img: '', site: '', source: ''},
-//     {name: '', img: '', site: '', source: ''}
-//   ]
-// }
-// ];
 
 /* Toggle Responsive Nav Start */
 var navIsOn = false;
@@ -187,3 +172,207 @@ function loaded() {
   form.addEventListener("submit", handleFormSubmit, false);
 };
 document.addEventListener('DOMContentLoaded', loaded, false);
+
+function Sites(props) {
+  return React.createElement(
+    "section",
+    { className: "portf_site-wrap" },
+    React.createElement(
+      "div",
+      { className: "portf_site" },
+      React.createElement(
+        "h4",
+        null,
+        "GitHub"
+      ),
+      React.createElement(
+        "div",
+        { className: "base_btn portf_site-btn" },
+        React.createElement(
+          "a",
+          { href: "https://github.com/Giveback007", target: "_blank" },
+          React.createElement(
+            "button",
+            null,
+            React.createElement("i", { className: "fa fa-github", "aria-hidden": "true" })
+          )
+        )
+      ),
+      React.createElement(
+        "h5",
+        null,
+        "I am active on Github"
+      )
+    ),
+    React.createElement(
+      "div",
+      { className: "portf_site" },
+      React.createElement(
+        "h4",
+        null,
+        "Codepen"
+      ),
+      React.createElement(
+        "div",
+        { className: "base_btn portf_site-btn" },
+        React.createElement(
+          "a",
+          { href: "https://codepen.io/giveback007/", target: "_blank" },
+          React.createElement(
+            "button",
+            null,
+            React.createElement("i", { className: "fa fa-codepen", "aria-hidden": "true" })
+          )
+        )
+      ),
+      React.createElement(
+        "h5",
+        null,
+        "I also post on Codepen"
+      )
+    ),
+    React.createElement(
+      "div",
+      { className: "portf_site" },
+      React.createElement(
+        "h4",
+        null,
+        "freeCodeCamp"
+      ),
+      React.createElement(
+        "div",
+        { className: "base_btn portf_site-btn" },
+        React.createElement(
+          "a",
+          { href: "https://www.freecodecamp.org/giveback007", target: "_blank" },
+          React.createElement(
+            "button",
+            null,
+            React.createElement("i", { className: "fa fa-free-code-camp", "aria-hidden": "true" })
+          )
+        )
+      ),
+      React.createElement(
+        "h5",
+        null,
+        "View my certificates"
+      )
+    )
+  );
+}
+////////////////////////////////////////////////
+function Main(props) {
+  var mapedSections = props.items.map(function (x) {
+    return React.createElement(Section, { obj: x });
+  });
+  return React.createElement(
+    "div",
+    { className: "portf_innerWrap" },
+    React.createElement(
+      "h2",
+      null,
+      "Portfolio"
+    ),
+    React.createElement(Sites, null),
+    mapedSections
+  );
+}
+
+function Section(props) {
+  var mapedItems = props.obj.items.map(function (x) {
+    return React.createElement(Item, { item: x });
+  });
+  return React.createElement(
+    "section",
+    { id: "react", className: "portf_section" },
+    React.createElement(
+      "h3",
+      null,
+      props.obj.name
+    ),
+    React.createElement(
+      "div",
+      { className: "portf_code-line" },
+      React.createElement("i", { className: "fa fa-chevron-down", "aria-hidden": "true" })
+    ),
+    React.createElement(
+      "div",
+      { className: "portf_item-wrap" },
+      mapedItems
+    )
+  );
+}
+
+function Item(props) {
+
+  function itemImg(img) {
+    if (img === "") {
+      return 'assets/imgs/portfolio/under_construction.jpg';
+    }
+    if (img.slice(0, 4) === 'http') {
+      return img;
+    }
+    return "assets/imgs/portfolio/" + img;
+  }
+
+  function itemSite(link) {
+    var x;
+    if (link.slice(0, 4) === 'http') {
+      x = link;
+    } else if (link === "") {
+      return null;
+    } else {
+      x = "https://giveback007.github.io/" + link;
+    }
+
+    return React.createElement(
+      "a",
+      { href: x, target: "_blank", className: "portf_item-link" },
+      React.createElement("i", { className: "fa fa-eye", "aria-hidden": "true" }),
+      React.createElement(
+        "p",
+        null,
+        "view site"
+      )
+    );
+  }
+
+  function itemSource(src) {
+    var x;
+    if (src.slice(0, 4) === 'http') {
+      x = src;
+    } else if (src === "") {
+      return null;
+    } else {
+      x = "https://giveback007.github.io/" + src;
+    }
+    return React.createElement(
+      "a",
+      { href: src, target: "_blank", className: "portf_item-link" },
+      React.createElement("i", { className: "fa fa-code", "aria-hidden": "true" }),
+      React.createElement(
+        "p",
+        null,
+        "source code"
+      )
+    );
+  }
+
+  return React.createElement(
+    "div",
+    { style: { backgroundImage: "url(" + itemImg(props.item.img) + ")" }, className: "portf_item" },
+    props.item.name === '' ? null : React.createElement(
+      "h4",
+      { className: "portf_item-title" },
+      React.createElement(
+        "span",
+        null,
+        props.item.name
+      )
+    ),
+    itemSite(props.item.site),
+    itemSource(props.item.source)
+  );
+}
+
+ReactDOM.render(React.createElement(Main, { items: portf_items }), document.getElementById('portf'));
