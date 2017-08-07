@@ -10,7 +10,7 @@ var portf_sites = [];
 var portf_items = [
 // react.js
 { "name": "React.js",
-  "items": [{ "name": "Conways GoL", "img": "game-of-life.png", "site": "https://giveback007.github.io/game-of-life-react-js", "source": "https://github.com/Giveback007/game-of-life-react-js" }, { "name": "Leaderboard", "img": "camper-leaderboard.png", "site": "Camper-Leaderboard", "source": "" }, { "name": "Recipe Box", "img": "recipe-box.png", "site": "Recipe-Box", "source": "" }, { "name": "Markdown Prev", "img": "/h-rez/markdown-previewer.png", "site": "Markdown-Previewer", "source": "" }]
+  "items": [{ "name": "Conways GoL", "img": "game-of-life.png", "site": "https://giveback007.github.io/game-of-life-react-js", "source": "https://github.com/Giveback007/game-of-life-react-js" }, { "name": "Leaderboard", "img": "camper-leaderboard.png", "site": "Camper-Leaderboard", "source": "" }, { "name": "Recipe Box", "img": "recipe-box.png", "site": "Recipe-Box", "source": "" }, { "name": "Markdown Prev", "img": "h-rez/markdown-previewer.png", "site": "Markdown-Previewer", "source": "" }]
 },
 // misc
 { "name": "Misc.",
@@ -324,7 +324,6 @@ function Item(props) {
     } else {
       x = "https://giveback007.github.io/" + link;
     }
-
     return React.createElement(
       "a",
       { href: x, target: "_blank", className: "portf_item-link" },

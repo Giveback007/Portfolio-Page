@@ -76,7 +76,6 @@ function Item(props) {
     if (link.slice(0, 4) === 'http') {x = link}
     else if (link === "") {return null}
     else {x = `https://giveback007.github.io/${link}`}
-
     return(<a href={x} target='_blank' className='portf_item-link'>
             <i className="fa fa-eye" aria-hidden="true"></i><p>view site</p>
           </a>)
