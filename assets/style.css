@@ -465,18 +465,11 @@ button:focus {
 .contact_subhead {
   margin: 0 0 20px 0; }
 
-.contact_innerWrap {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-  .contact_innerWrap section {
-    margin: 15px auto; }
+.contact_innerWrap section {
+  margin: 15px auto; }
 
 .contact_form-input-wrap {
+  margin: auto;
   max-width: 550px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -506,6 +499,7 @@ button:focus {
   height: 35px; }
 
 .contact_social {
+  margin: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
