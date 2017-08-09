@@ -10,29 +10,26 @@ var portf_sites = [];
 var portf_items = [
 // react.js
 { "name": "React.js",
-  "items": [{ "name": "Conways GoL", "img": "game-of-life.png", "site": "https://giveback007.github.io/game-of-life-react-js", "source": "https://github.com/Giveback007/game-of-life-react-js" }, { "name": "Leaderboard", "img": "camper-leaderboard.png", "site": "Camper-Leaderboard", "source": "" }, { "name": "Recipe Box", "img": "recipe-box.png", "site": "Recipe-Box", "source": "" }, { "name": "Markdown Prev", "img": "h-rez/markdown-previewer.png", "site": "Markdown-Previewer", "source": "" }]
-},
-// misc
-{ "name": "Misc.",
-  "items": [{ "name": "JS Calculator", "img": "js-calculator.png", "site": "JS-Calculator", "source": "" }, { "name": "Pomodoro Timer", "img": "pomodoro.png", "site": "Pomodoro", "source": "" }, { "name": "Simon Game", "img": "simon.png", "site": "Simon-Game", "source": "" }]
-},
-// backend
-{ "name": "Node.js",
-  "items": [{ "name": "", "img": "", "site": "", "source": "" }]
-}, { "name": "JSON/AJAX api",
-  "items": [{ "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }]
+  "items": [{ "name": "Conways GoL", "img": "game-of-life.png", "site": "game-of-life-react-js", "source": "game-of-life-react-js" }, { "name": "Leaderboard", "img": "camper-leaderboard.png", "site": "Camper-Leaderboard", "source": "Local-Weather" }, { "name": "Recipe Box", "img": "recipe-box.png", "site": "Recipe-Box", "source": "Local-Weather" }, { "name": "Markdown Prev", "img": "h-rez/markdown-previewer.png", "site": "Markdown-Previewer", "source": "Local-Weather" }]
 },
 // algorithm
 { "name": "Algorithm Scripting",
-  "items": [{ "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }]
-},
-// cms
-{ "name": "CMS",
-  "items": [{ "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }]
+  "items": [{ "name": "Min-Max Algo", "img": "min-max.png", "site": "Unbeatable-Tic-Tac-Toe", "source": "Unbeatable-Tic-Tac-Toe" }]
 },
 // misc
 { "name": "Misc.",
-  "items": [{ "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }, { "name": "", "img": "", "site": "", "source": "" }]
+  "items": [{ "name": "JS Calculator", "img": "js-calculator.png", "site": "JS-Calculator", "source": "JS-Calculator" },
+  // {"name": "Pomodoro Timer", "img": "pomodoro.png", "site": "Pomodoro", "source": ""},
+  { "name": "Simon Game", "img": "simon.png", "site": "Simon-Game", "source": "Simon-Game" }, { "name": "Hero Gallery", "img": "hero-gallery.jpg", "site": "Hero-Gallery", "source": "Hero-Gallery" }]
+},
+// backend
+// { "name": "Node.js",
+//   "items": [
+//     {"name": "", "img": "", "site": "", "source": ""}
+//   ]
+// },
+{ "name": "JSON api",
+  "items": [{ "name": "Twich api", "img": "twitch.png", "site": "Twitch-Status", "source": "Twitch-Status" }, { "name": "Weather api", "img": "weather.png", "site": "Local-Weather", "source": "Local-Weather" }, { "name": "Wiki api", "img": "wiki.png", "site": "Wiki-Viewer", "source": "Wiki-Viewer" }, { "name": "Random Quote", "img": "rand-quote.png", "site": "Random-Quote-Gen", "source": "Random-Quote-Gen" }]
 }];
 
 /* Toggle Responsive Nav Start */
@@ -343,11 +340,11 @@ function Item(props) {
     } else if (src === "") {
       return null;
     } else {
-      x = "https://giveback007.github.io/" + src;
+      x = "https://github.com/Giveback007/" + src;
     }
     return React.createElement(
       "a",
-      { href: src, target: "_blank", className: "portf_item-link" },
+      { href: x, target: "_blank", className: "portf_item-link" },
       React.createElement("i", { className: "fa fa-code", "aria-hidden": "true" }),
       React.createElement(
         "p",

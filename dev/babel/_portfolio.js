@@ -85,8 +85,8 @@ function Item(props) {
     var x;
     if (src.slice(0, 4) === 'http') {x = src}
     else if (src === "") {return null}
-    else {x = `https://giveback007.github.io/${src}`}
-    return(<a href={src} target='_blank' className='portf_item-link'>
+    else {x = `https://github.com/Giveback007/${src}`}
+    return(<a href={x} target='_blank' className='portf_item-link'>
           <i className="fa fa-code" aria-hidden="true"></i><p>source code</p>
         </a>)
   }

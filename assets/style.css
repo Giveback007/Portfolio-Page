@@ -409,8 +409,7 @@ button:focus {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  color: #396E7F;
-  text-shadow: 1px 1px rgba(255, 255, 255, 0.7); }
+  text-shadow: 1px 1px white; }
   .portf_item-link:hover {
     opacity: 1 !important;
     background-color: rgba(0, 0, 0, 0.2) !important;
@@ -466,7 +465,7 @@ button:focus {
   margin: 0 0 20px 0; }
 
 .contact_innerWrap section {
-  margin: 15px auto; }
+  margin: 25px auto; }
 
 .contact_form-input-wrap {
   margin: auto;
