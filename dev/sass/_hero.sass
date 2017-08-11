@@ -5,34 +5,64 @@
   height: 100vh
   display: flex
   flex-direction: column
-  text-shadow: 1px 2px rgba(77,91,97,1)
-  h1, h2, h3, i
+  text-shadow: 1px 1px rgba(77,91,97,1)
+  h1
+    margin: 20px 0
+  h1, h2, h3, h4, p
     color: $main3
+  p
+    text-align: center
+    margin: 0 auto
 
 .hero_center
   margin: auto
   width: 100%
   padding: 25px 0
   border-radius: 10px
-  h2
-    font-size: 75px
-    max-width: 500px
-    margin: auto
-    span
-      font-size: 45px
-  h3
-    font-size: 60px
 
-.hero_title
+.hero_icon-top-wrap
   display: flex
   justify-content: center
-  margin: 10px 0
-  h1
-    margin: 25px 0
-  img
-    height: 125px
-    border-radius: 50%
-    margin-right: 15px
+  font-size: 60px
+
+.hero_icon-top
+  margin: 15px 12px 0 12px
+  transition: margin 0.5s
+  color: white
+  &.anim
+    margin-top: 0px
+    transition: margin 0.5s
+
+.hero_verb
+  font-size: 35px
+  color: white
+  display: flex
+  align-items: center
+  justify-content: center
+  position: absolute
+  width: 100%
+  margin: 25px 0 0 0
+  height: 65px
+  overflow: hidden
+  div
+    margin: 0 7px 0 7px
+
+#hero_verb-word
+  margin: 0
+  position: relative
+  text-align: center
+  width: 145px
+  &.anim0
+    top: 55px
+  &.anim1
+    top: 0
+  &.anim2
+    top: -55px
+
+#hero_verb-icon
+  font-size: 55px
+  transition: opacity 1.8s
+  // color: inherit
 
 .hero_arrow-down
   text-align: center
@@ -47,19 +77,28 @@
     margin: 15px 0 0 0
   i
     margin: 15px
+    color: white
+
+.hero_hire-btn
+  width: 250px
+  height: 60px
+  margin: 5px auto 15px auto
+  transition: width 0.5s
+  &:hover
+    width: 310px
+    transition: width 1.5s
+  button
+    font-size: 22px
 
 @media screen and (max-width: 550px)
-  .hero_center
-    h2
-      font-size: 55px
-      max-width: 350px
-      span
-        font-size: 25px
-    h3
-      font-size: 50px
-  .hero_title
+  #hero
     h1
-      font-size: 45px
-    img
-      height: 95px
-      margin: 5px
+      font-size: 40px
+    h3
+      font-size: 22px
+  .hero_center
+    // .hero_icons-bot
+    //   font-size: 55px
+    //   max-width: 350px
+    .hero_icon-top
+      font-size: 50px

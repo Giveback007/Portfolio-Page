@@ -1,6 +1,8 @@
 "use strict";
 
 //@prepros-append babel/_portfolio-obj.js
+//@prepros-append babel/_hero-icons.js
+//@prepros-append babel/_hero.js
 //@prepros-append babel/_nav.js
 //@prepros-append babel/_form.js
 //@prepros-append babel/_portfolio.js
@@ -31,6 +33,82 @@ var portf_items = [
 { "name": "JSON api",
   "items": [{ "name": "Twich api", "img": "twitch.png", "site": "Twitch-Status", "source": "Twitch-Status" }, { "name": "Weather api", "img": "weather.png", "site": "Local-Weather", "source": "Local-Weather" }, { "name": "Wiki api", "img": "wiki.png", "site": "Wiki-Viewer", "source": "Wiki-Viewer" }, { "name": "Random Quote", "img": "rand-quote.png", "site": "Random-Quote-Gen", "source": "Random-Quote-Gen" }]
 }];
+
+var verbArr = ['work', 'play', 'create', 'make', 'build', 'design', 'forge', 'form', 'invent', 'imagine', 'think', 'develop'];
+
+var devIcons = ['<i class="devicon-atom-original colored"></i>', '<i class="devicon-babel-plain colored"></i>', '<i class="devicon-bootstrap-plain-wordmark colored"></i>', '<i class="devicon-gimp-plain colored"></i>', '<i class="devicon-chrome-plain colored"></i>', '<i class="devicon-firefox-plain colored"></i>', '<i class="devicon-git-plain colored"></i>', '<i class="devicon-github-plain colored"></i>', '<i class="devicon-gulp-plain colored"></i>', '<i class="devicon-ie10-original colored"></i>', '<i class="devicon-jquery-plain colored"></i>', '<i class="devicon-nodejs-plain colored"></i>', '<i class="devicon-php-plain colored"></i>', '<i class="devicon-react-original colored"></i>', '<i class="devicon-safari-plain colored"></i>', '<i class="devicon-sass-original colored"></i>', '<i class="devicon-slack-plain colored"></i>', '<i class="devicon-webpack-plain colored"></i>'];
+
+function animTopIcons(turn) {
+  function remove() {
+    for (var i = 0; i < icons.length; i++) {
+      icons[i].classList.remove('anim');
+    }
+  }
+
+  var icons = document.getElementsByClassName('hero_icon-top');
+  var time = 300;
+  remove();
+  if (turn <= 2) {
+    icons[turn].classList.add('anim');
+  }
+  if (turn > 2) {
+    time = 3000;turn = -1;
+  }
+
+  setTimeout(function () {
+    animTopIcons(turn + 1);
+  }, time);
+}
+
+animTopIcons(0);
+
+function animVerbWord(r, loop, time) {
+  var nextTime;
+  if (loop > 17) {
+    nextTime = 50;loop = 0;
+  } else if (loop > 4) {
+    nextTime = time * 1.25;
+  } else {
+    nextTime = time * 1.1;
+  }
+
+  var word = document.getElementById('hero_verb-word');
+  var rand = -1;
+  while (rand < 0 || rand === r) {
+    rand = Math.floor(Math.random() * verbArr.length);
+  }
+  word.innerHTML = verbArr[rand];
+
+  word.classList.add('anim0');
+  word.style.transition = 'none';
+
+  setTimeout(function () {
+    word.classList.remove('anim0');
+    word.classList.add('anim1');
+    word.style.transition = "all " + time + "ms ease";
+  }, time);
+  setTimeout(function () {
+    word.classList.remove('anim1');
+    word.classList.add('anim2');
+    word.style.transition = "all " + time + "ms ease";
+  }, time * 2);
+  setTimeout(function () {
+    word.classList.remove('anim2');
+    console.log(nextTime);
+    animVerbWord(rand, loop + 1, nextTime);
+  }, time * 2.5);
+}
+
+animVerbWord(-1, 0, 50);
+
+function animVerbIcon() {
+  var icon = document.getElementById('hero_verb-icon');
+  var rand = Math.floor(Math.random() * devIcons.length);
+  icon.innerHTML = devIcons[rand];
+  icon.style.opacity = 0;
+}
+
+animVerbIcon();
 
 /* Toggle Responsive Nav Start */
 var navIsOn = false;
