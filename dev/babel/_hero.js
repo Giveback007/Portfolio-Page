@@ -19,9 +19,22 @@ function animTopIcons(turn) {
 
 animTopIcons(0);
 
+// function iconHSL() {
+//   var icons = document.getElementsByClassName('hero_icon-top')
+//   var count = 0;
+//   var color = 202;
+//   setInterval(() => {
+//     count++
+//     if (count > 2) {count = 0;}
+//     icons[count].style.color = `hsl(${color *= 1.015}, 100%, 38%)`;
+//   }, 50)
+// }
+//
+// iconHSL();
+
 function animVerbWord(r, loop, time) {
   var nextTime;
-  if (loop > 17) {nextTime = 50; loop = 0}
+  if (loop > 16) {nextTime = 50; loop = 0}
   else if (loop > 4) {nextTime = time * 1.25}
   else {nextTime = time * 1.1}
 
@@ -47,7 +60,6 @@ function animVerbWord(r, loop, time) {
   }, time*2);
   setTimeout(() => {
     word.classList.remove('anim2');
-    console.log(nextTime)
     animVerbWord(rand, loop + 1, nextTime);
   }, (time*2.5));
 
@@ -55,11 +67,13 @@ function animVerbWord(r, loop, time) {
 
 animVerbWord(-1, 0, 50);
 
-function animVerbIcon() {
-  var icon = document.getElementById('hero_verb-icon');
-  var rand = Math.floor(Math.random()*devIcons.length);
-  icon.innerHTML = devIcons[rand];
-  icon.style.opacity = 0;
-}
-
-animVerbIcon();
+// function animVerbIcon() {
+//   var icon = document.getElementById('hero_verb-icon');
+//   icon.style.opacity = 1;
+//   setInterval(() => {
+//     var rand = Math.floor(Math.random()*devIcons.length);
+//     icon.innerHTML = devIcons[rand];
+//   }, 2500)
+// }
+//
+// animVerbIcon();

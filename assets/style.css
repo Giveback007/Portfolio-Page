@@ -160,12 +160,11 @@ button:focus {
   height: 65px;
   overflow: hidden; }
   .hero_verb div {
-    margin: 0 7px 0 7px; }
+    margin: 0 5px 0 5px; }
 
 #hero_verb-word {
-  margin: 0;
   position: relative;
-  text-align: center;
+  text-align: left;
   width: 145px; }
   #hero_verb-word.anim0 {
     top: 55px; }
@@ -175,10 +174,7 @@ button:focus {
     top: -55px; }
 
 #hero_verb-icon {
-  font-size: 55px;
-  -webkit-transition: opacity 1.8s;
-  -o-transition: opacity 1.8s;
-  transition: opacity 1.8s; }
+  font-size: 55px; }
 
 .hero_arrow-down {
   text-align: center;
