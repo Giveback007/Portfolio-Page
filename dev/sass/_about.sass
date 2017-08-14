@@ -4,23 +4,38 @@
       color: $main1
 
 .about_top-sect
-  display: flex
-  flex-wrap: wrap
-  .about_point
-    flex: 1
-    margin: 20px
+  margin: 25px 0
+  min-height: 280px
+
+.about_self-img
+  float: left
+  width: 250px
+  margin: 0 25px 0 0
+  img
+    width: 100%
+    border-radius: 50%
 
 .about_bot-sect
-  padding: 15px
-  width: 500px
-  margin: auto
+  display: flex
+  .about_point
+    margin: 0 15px
+    flex: 1
 
 @media screen and (max-width: 550px)
-  .about_top-sect
-    flex-direction: column
-    .about_point
-      flex: none
+  p, li
+    font-size: 15px
+  .about_self-img
+    float: none
+    margin: auto
   .about_bot-sect
-    width: 100%
-  .about_ghost-bot
+    display: block
+//
+
+//   .about_top-sect
+//     flex-direction: column
+//     .about_point
+//       flex: none
+//   .about_bot-sect
+//     width: 100%
+//   .about_ghost-bot
     // height: 15px

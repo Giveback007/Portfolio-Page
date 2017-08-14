@@ -50,7 +50,7 @@ button:focus {
   .base_section.even {
     background: rgba(0, 0, 0, 0.02); }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .base_section {
     padding: 20px; } }
 
@@ -198,17 +198,13 @@ button:focus {
 .hero_hire-btn {
   width: 250px;
   height: 60px;
-  margin: 5px auto 15px auto;
+  margin: 0 auto;
   -webkit-transition: width 0.5s;
   -o-transition: width 0.5s;
   transition: width 0.5s; }
-  .hero_hire-btn:hover {
-    width: 310px;
-    -webkit-transition: width 1.5s;
-    -o-transition: width 1.5s;
-    transition: width 1.5s; }
   .hero_hire-btn button {
-    font-size: 22px; }
+    font-size: 22px;
+    border-radius: 10px 10px 0 0; }
 
 @media screen and (max-width: 550px) {
   #hero h1 {
@@ -327,39 +323,37 @@ button:focus {
   color: #396E7F; }
 
 .about_top-sect {
+  margin: 25px 0;
+  min-height: 280px; }
+
+.about_self-img {
+  float: left;
+  width: 250px;
+  margin: 0 25px 0 0; }
+  .about_self-img img {
+    width: 100%;
+    border-radius: 50%; }
+
+.about_bot-sect {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-  .about_top-sect .about_point {
+  display: flex; }
+  .about_bot-sect .about_point {
+    margin: 0 15px;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
-    flex: 1;
-    margin: 20px; }
-
-.about_bot-sect {
-  padding: 15px;
-  width: 500px;
-  margin: auto; }
+    flex: 1; }
 
 @media screen and (max-width: 550px) {
-  .about_top-sect {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column; }
-    .about_top-sect .about_point {
-      -webkit-box-flex: 0;
-      -webkit-flex: none;
-      -ms-flex: none;
-      flex: none; }
+  p, li {
+    font-size: 15px; }
+  .about_self-img {
+    float: none;
+    margin: auto; }
   .about_bot-sect {
-    width: 100%; } }
+    display: block; } }
 
 .portf_site-wrap {
   display: -webkit-box;

@@ -1,4 +1,4 @@
-var verbArr = ['work', 'play', 'create', 'make', 'build', 'design', 'forge',
+var verbArr = ['work', 'play', 'create', 'make', 'build', 'design',
               'form', 'invent', 'imagine', 'think', 'develop'];
 
 var devIcons = [
