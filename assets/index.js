@@ -9,8 +9,10 @@
 
 var portf_items = [
 // backend
-{ "name": "Node.js",
-  "items": [{ "name": "Timestamp", "img": "timestamp.png", "site": "https://giveback007-timestamp-microservice.glitch.me/", "source": "Timestamp-Microservice" }]
+{ "name": "Node.js Microservices",
+  "items": [{ "name": "Timestamp", "img": "timestamp.png", "site": "https://giveback007-timestamp-microservice.glitch.me/", "source": "Timestamp-Microservice" }, { "name": "Header-Parser", "img": "header.png", "site": "https://giveback007-request-header.glitch.me/api/whoami", "source": "Request-Header-Parser-Microservice"
+    // {"name": "", "img": "", "site": "", "source": ""}
+  }]
 },
 // react.js
 { "name": "React.js",
@@ -72,14 +74,20 @@ animTopIcons(0);
 
 function animVerbWord(r, loop, time) {
   var nextTime;
-  if (loop > 16) {
-    nextTime = 50;loop = 0;
+  if (loop > 12) {
+    nextTime = 100;loop = 0;
   } else if (loop > 4) {
-    nextTime = time * 1.25;
+    nextTime = time * 1.75;
+    if (nextTime < 500) {
+      nextTime = 500;
+    }
   } else {
-    nextTime = time * 1.1;
+    nextTime = time * 1.2;
   }
 
+  if (nextTime > 750) {
+    nextTime = 750;
+  }
   var word = document.getElementById('hero_verb-word');
   var rand = -1;
   while (rand < 0 || rand === r) {
@@ -106,7 +114,7 @@ function animVerbWord(r, loop, time) {
   }, time * 2.5);
 }
 
-animVerbWord(-1, 0, 50);
+animVerbWord(-1, 0, 100);
 
 // function animVerbIcon() {
 //   var icon = document.getElementById('hero_verb-icon');

@@ -34,10 +34,14 @@ animTopIcons(0);
 
 function animVerbWord(r, loop, time) {
   var nextTime;
-  if (loop > 16) {nextTime = 50; loop = 0}
-  else if (loop > 4) {nextTime = time * 1.25}
-  else {nextTime = time * 1.1}
+  if (loop > 12) {nextTime = 100; loop = 0}
+  else if (loop > 4) {
+    nextTime = time * 1.75;
+    if (nextTime < 500) {nextTime = 500}
+  }
+  else {nextTime = time * 1.2}
 
+  if (nextTime > 750) {nextTime = 750}
   var word = document.getElementById('hero_verb-word');
   var rand = -1;
   while (rand < 0 || rand === r) {
@@ -65,7 +69,7 @@ function animVerbWord(r, loop, time) {
 
 }
 
-animVerbWord(-1, 0, 50);
+animVerbWord(-1, 0, 100);
 
 // function animVerbIcon() {
 //   var icon = document.getElementById('hero_verb-icon');

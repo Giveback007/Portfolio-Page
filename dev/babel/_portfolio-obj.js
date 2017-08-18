@@ -1,8 +1,9 @@
 var portf_items = [
   // backend
-  { "name": "Node.js",
+  { "name": "Node.js Microservices",
     "items": [
       {"name": "Timestamp", "img": "timestamp.png", "site": "https://giveback007-timestamp-microservice.glitch.me/", "source": "Timestamp-Microservice"},
+      {"name": "Header-Parser", "img": "header.png", "site": "https://giveback007-request-header.glitch.me/api/whoami", "source": "Request-Header-Parser-Microservice"}
       // {"name": "", "img": "", "site": "", "source": ""}
     ]
   },

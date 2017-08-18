@@ -101,7 +101,7 @@ button:focus {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  text-shadow: 1px 1px #4d5b61; }
+  text-shadow: 0 0 2px #4d5b61; }
   #hero h1 {
     margin: 20px 0; }
   #hero h1, #hero h2, #hero h3, #hero h4, #hero p {
