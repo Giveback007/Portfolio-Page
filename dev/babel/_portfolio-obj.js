@@ -14,9 +14,9 @@ var portf_items = [
   { "name": "React.js",
     "items": [
       {"name": "Conways GoL", "img": "game-of-life.png", "site": "game-of-life-react-js", "source": "game-of-life-react-js"},
-      {"name": "Leaderboard", "img": "camper-leaderboard.png", "site": "Camper-Leaderboard", "source": "Markdown-Previewer"},
+      {"name": "Leaderboard", "img": "camper-leaderboard.png", "site": "Camper-Leaderboard", "source": "Camper-Leaderboard"},
       {"name": "Recipe Box", "img": "recipe-box.png", "site": "Recipe-Box", "source": "Recipe-Box"},
-      {"name": "Markdown Prev", "img": "markdown-previewer.png", "site": "Markdown-Previewer", "source": "Local-Weather"}
+      {"name": "Markdown Prev", "img": "markdown-previewer.png", "site": "Markdown-Previewer", "source": "Markdown-Previewer"}
     ]
   },
   // algorithm
