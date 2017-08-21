@@ -10,7 +10,8 @@
 var portf_items = [
 // backend
 { "name": "Node.js Microservices",
-  "items": [{ "name": "Timestamp", "img": "timestamp.png", "site": "https://giveback007-timestamp-microservice.glitch.me/", "source": "Timestamp-Microservice" }, { "name": "Header-Parser", "img": "header.png", "site": "https://giveback007-request-header.glitch.me/api/whoami", "source": "Request-Header-Parser-Microservice"
+  "items": [{ "name": "Timestamp", "img": "timestamp.png", "site": "https://giveback007-timestamp-microservice.glitch.me/", "source": "Timestamp-Microservice" }, { "name": "Header-Parser", "img": "header.png", "site": "https://giveback007-request-header.glitch.me/api/whoami", "source": "Request-Header-Parser-Microservice" }, { "name": "Quotes", "img": "quotes-api.png", "site": "https://giveback007-random-quote-microservice.glitch.me/", "source": "Random-Quote-Microservice"
+    // {"name": "", "img": "", "site": "", "source": ""},
     // {"name": "", "img": "", "site": "", "source": ""}
   }]
 },
@@ -27,7 +28,7 @@ var portf_items = [
   "items": [{ "name": "JS Calculator", "img": "js-calculator.png", "site": "JS-Calculator", "source": "JS-Calculator" },
   // {"name": "Pomodoro Timer", "img": "pomodoro.png", "site": "Pomodoro", "source": ""},
   { "name": "Simon Game", "img": "simon.png", "site": "Simon-Game", "source": "Simon-Game" }, { "name": "Hero Gallery", "img": "hero-gallery.jpg", "site": "Hero-Gallery", "source": "Hero-Gallery" }]
-}, { "name": "JSON api",
+}, { "name": "JSON API and AJAX",
   "items": [{ "name": "Twich api", "img": "twitch.png", "site": "Twitch-Status", "source": "Twitch-Status" }, { "name": "Weather api", "img": "weather.png", "site": "Local-Weather", "source": "Local-Weather" }, { "name": "Wiki api", "img": "wiki.png", "site": "Wiki-Viewer", "source": "Wiki-Viewer" }, { "name": "Random Quote", "img": "rand-quote.png", "site": "Random-Quote-Gen", "source": "Random-Quote-Gen" }]
 }];
 
