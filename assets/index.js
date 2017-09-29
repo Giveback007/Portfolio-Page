@@ -18,7 +18,7 @@ var portf_items = [
 },
 // react.js
 { "name": "React.js",
-  "items": [{ "name": "Conways GoL", "img": "game-of-life.png", "site": "game-of-life-react-js", "source": "game-of-life-react-js" }, { "name": "Leaderboard", "img": "camper-leaderboard.png", "site": "Camper-Leaderboard", "source": "Camper-Leaderboard" }, { "name": "Recipe Box", "img": "recipe-box.png", "site": "Recipe-Box", "source": "Recipe-Box" }, { "name": "Markdown Prev", "img": "markdown-previewer.png", "site": "Markdown-Previewer", "source": "Markdown-Previewer" }]
+  "items": [{ "name": "Meetup-Map-Search", "img": "meetup-map.jpg", "site": "https://secure.meetup.com/oauth2/authorize?client_id=2hdi2rl38imnr4pjip0iuo1t4p&response_type=token&redirect_uri=https://giveback007.github.io/Meetup-Map-Search/dist/index.html", "source": "Meetup-Map-Search" }, { "name": "Conways GoL", "img": "game-of-life.png", "site": "game-of-life-react-js", "source": "game-of-life-react-js" }, { "name": "Leaderboard", "img": "camper-leaderboard.png", "site": "Camper-Leaderboard", "source": "Camper-Leaderboard" }, { "name": "Recipe Box", "img": "recipe-box.png", "site": "Recipe-Box", "source": "Recipe-Box" }, { "name": "Markdown Prev", "img": "markdown-previewer.png", "site": "Markdown-Previewer", "source": "Markdown-Previewer" }]
 },
 // algorithm
 { "name": "Algorithm Scripting",
@@ -149,11 +149,11 @@ function toggleNav() {
   }
 }
 
-document.getElementById('nav_toggle').addEventListener("click", toggleNav
+document.getElementById('nav_toggle').addEventListener("click", toggleNav);
 /* Toggle Responsive Nav End */
 
 /* Smooth Scroll Start */
-);$(document).ready(function () {
+$(document).ready(function () {
   var navHeight = $('nav').outerHeight();
   $('.nav_anchor').click(function (x) {
     var linkHref = $(this).attr('href');

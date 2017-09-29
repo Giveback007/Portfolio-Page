@@ -13,6 +13,7 @@ var portf_items = [
   // react.js
   { "name": "React.js",
     "items": [
+      {"name": "Meetup-Map-Search", "img": "meetup-map.jpg", "site": "https://secure.meetup.com/oauth2/authorize?client_id=2hdi2rl38imnr4pjip0iuo1t4p&response_type=token&redirect_uri=https://giveback007.github.io/Meetup-Map-Search/dist/index.html", "source": "Meetup-Map-Search"},
       {"name": "Conways GoL", "img": "game-of-life.png", "site": "game-of-life-react-js", "source": "game-of-life-react-js"},
       {"name": "Leaderboard", "img": "camper-leaderboard.png", "site": "Camper-Leaderboard", "source": "Camper-Leaderboard"},
       {"name": "Recipe Box", "img": "recipe-box.png", "site": "Recipe-Box", "source": "Recipe-Box"},
