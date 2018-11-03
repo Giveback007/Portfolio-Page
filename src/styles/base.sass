@@ -1,0 +1,55 @@
+*
+    box-sizing: border-box
+
+html, body
+    margin: 0
+    padding: 0
+
+ul
+    margin: 0
+
+.home
+    background-image: url("./assets/black-keyboard.jpg")
+    background-size: cover
+    background-position: center
+
+.about
+    background: red
+
+.portfolio
+    background: blue
+
+.contact
+    background: yellow
+
+.links
+    position: fixed
+    z-index: 100
+
+.page
+  position: absolute
+  top: 100px
+  height: 100vh
+  left: 0
+  right: 0
+  -webkit-overflow-scrolling: touch
+
+.fade-appear,
+.fade-enter 
+  opacity: 0
+  z-index: 1
+
+.fade-appear-active,
+.fade-enter.fade-enter-active 
+    opacity: 1
+    transition: opacity 500ms ease-in-out
+    
+.fade-exit 
+  opacity: 1
+
+.fade-exit.fade-exit-active
+    opacity: 0
+    transition: opacity 500ms ease-in-out
+
+
+
