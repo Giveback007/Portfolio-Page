@@ -1,11 +1,8 @@
+// TODO: in dev only
+console.clear();
 import React = require("react");
 import ReactDOM = require("react-dom");
 import { App } from "./components/app.component";
-
-// Files //
-// import './assets/black-keyboard.jpg';
-
-// Styles //
 import "./index.scss";
 
 // For Quokka.js //

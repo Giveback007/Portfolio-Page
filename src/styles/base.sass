@@ -1,3 +1,8 @@
+// rgb(74, 143, 194);
+
+// micro interaction library
+// https://webkul.github.io/micron/docs.html#!
+    
 *
     box-sizing: border-box
 
@@ -5,51 +10,62 @@ html, body
     margin: 0
     padding: 0
 
-ul
-    margin: 0
+.spinner
+    position: fixed !important
+    top: 25px
+    left: 25px
+    z-index: 101
+    .spinner-ring
+        border-top-color: white !important
+        // box-shadow: 1px 1px #888888
 
-.home
-    background-image: url("./assets/black-keyboard.jpg")
-    background-size: cover
-    background-position: center
-
-.about
-    background: red
-
-.portfolio
-    background: blue
-
-.contact
-    background: yellow
-
-.links
-    position: fixed
-    z-index: 100
-
-.page
-  position: absolute
-  top: 100px
-  height: 100vh
-  left: 0
-  right: 0
-  -webkit-overflow-scrolling: touch
-
-.fade-appear,
-.fade-enter 
-  opacity: 0
-  z-index: 1
-
-.fade-appear-active,
-.fade-enter.fade-enter-active 
-    opacity: 1
-    transition: opacity 500ms ease-in-out
+.absolute-center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
     
-.fade-exit 
-  opacity: 1
+.routes
+    display: flex
+    right: 15px
+    top: 15px
+    z-index: 100
+    position: fixed
 
-.fade-exit.fade-exit-active
-    opacity: 0
-    transition: opacity 500ms ease-in-out
+a
+    text-decoration: none
+    color: white
+    cursor: default
 
 
+// https://blog.etch.team/react-page-transitions-make-your-website-feel-native-bf2804b011dc
+// .page {
+//   height: 100vh;
+//   padding: calc(15% + 1.5em) 5% 5%;
+//   overflow-y: auto;
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   -webkit-overflow-scrolling: touch;
+//   transition: transform 1s ease-in-out;
+// }
 
+// .page-enter {
+//   transform: translate(-100%, 0);
+// }
+// .page-enter-active {
+//   transform: translate(0, 0);
+// }
+// .page-exit {
+//   transform: translate(-100%, 0);
+// }
+
+// .page--prev.page-enter {
+//   transform: translate(100%, 0);
+// }
+// .page--prev.page-enter-active {
+//   transform: translate(0, 0);
+// }
+// .page--prev.page-exit {
+//   transform: translate(100%, 0);
+// }

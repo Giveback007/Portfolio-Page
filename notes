@@ -1,0 +1,16 @@
+// CSS
+- Button designs
+    https://codemyui.com/tag/button/
+- For building custom CSS grids
+    https://www.layoutit.com/grid
+- Css Checklist
+    - https://github.com/thedaviddias/Front-End-Design-Checklist
+- 50 css libs:
+https://speckyboy.com/top-50-css-resources/
+
+// NPM
+npm publish --access=public
+npm pack
+
+More on npm packages
+https://medium.freecodecamp.org/how-to-make-a-beautiful-tiny-npm-package-and-publish-it-2881d4307f78

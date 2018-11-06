@@ -29,9 +29,14 @@ module.exports = {
                 test: /\.tsx?$/, 
                 use: [{
                     loader: 'babel-loader',
-                    options: { plugins: ['react-hot-loader/babel'] }
-                },
-                {
+                    options: {
+                        // This is a feature of `babel-loader` for webpack (not Babel itself).
+                        // It enables caching results in ./node_modules/.cache/babel-loader/
+                        // directory for faster rebuilds.
+                        cacheDirectory: true,
+                        plugins: ['react-hot-loader/babel']
+                    }
+                }, {
                     loader: 'ts-loader',
                     options: {
                         experimentalWatchApi: true,
@@ -40,27 +45,30 @@ module.exports = {
                 }], 
                 
             }, {
-                test: /\.scss$/,
+                test: /.scss$/,
                 use: [{
                     loader: "style-loader" // creates style nodes from JS strings
                 }, {
                     loader: "css-loader", // translates CSS into CommonJS
                     options: { sourceMaps: true }
                 }, //{
-                //     loader: 'resolve-url-loader', // fixes the url("...")
+                //     loader: 'resolve-url-loader', // fixes the url("...") ? <- needs testing
                 //     options: { }
                 // }, 
                 {
                     loader: "sass-loader", // compiles Sass to CSS
-                    options: { sourceMaps: true }
-                }]
-            }, 
-            {
-                test: /\.(jpg|png)$/,
+                    options: {
+                        // implementation: require("sass"),
+                        sourceMaps: true
+                    }
+                }
+            ]
+            }, {
+                test: /\.(jpg|png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 use: [{
                     loader: "file-loader",
                     options: {
-                        name: "images/[name].[ext]",
+                        name: "assets/[name].[ext]",
                     }
                 }]
             }
@@ -77,7 +85,6 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
-
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.
     // This is important because it allows us to avoid bundling all of our

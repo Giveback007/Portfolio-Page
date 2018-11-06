@@ -1,9 +1,9 @@
-// @import "~leaflet/dist/leaflet.css";
-// @import '~antd/dist/antd.css';
+@import '~devicon/devicon.min.css';
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+@import "./styles/buttons.sass";
+@import "./styles/spinner.css";
 @import "./styles/base.sass";
-// @import "./styles/map.sass";
-// @import "./styles/nav.sass";
-// @import "./styles/controls.sass";
-
-
+@import "./styles/pages.sass";
+@import "./styles/transitions.sass";
+@import "./styles/hero.sass";
