@@ -1,22 +1,19 @@
 import React = require("react");
-import { hot } from "react-hot-loader";
+import { AppState } from "../@types";
+import { DevIcons } from "./dev-icons.component";
 
-export const Hero = () =>(
+type HeroProps = { icons: AppState['icons']; verb: string };
+export const Hero = ({ icons, verb }: HeroProps) => (
     <div className="page hero">
         <section className='hero_center'>
-            <div className='hero_icon-top-wrap'>
-                <div className='hero_icon-top'><i className="devicon-html5-plain-wordmark"></i></div>
-                <div className='hero_icon-top'><i className="devicon-css3-plain-wordmark"></i></div>
-                <div className='hero_icon-top'><i className='devicon-javascript-plain'></i></div>
-            </div>
+            <DevIcons icons={icons}/>
 
             <h1>Hi, I'm Dave</h1>
-
-            <h3>Front End Developer</h3>
+            <h3>Software Developer</h3>
 
             <div className='hero_verb'>
                 <div>I like to</div>
-                <div id='hero_verb-word'></div>
+                <div id='hero_verb-word'>{verb}</div>
             </div>
         </section>
 

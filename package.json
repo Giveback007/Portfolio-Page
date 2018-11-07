@@ -15,7 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "devicon": "^2.0.0",
+    "@giveback007/proxy-state": "0.1.1",
+    "@giveback007/util-lib": "0.1.4",
     "react": "16.6.0",
     "react-dom": "16.6.0",
     "react-router-dom": "4.3.1",

@@ -3,15 +3,14 @@ import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-do
 import React = require("react");
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Hero } from "./hero.component";
+import { Spinner } from "./spinner.component";
+import { AppState } from "../@types";
 
-if (1) {
-    console.log('break-here')
-}
-
+if (1) console.clear();
 
 const links = [['/about', 'About'], ['/portfolio', 'Portfolio'], ['/contact', 'Contact']]
 
-const AppComponent = () => 
+const AppComponent = ({ state: { icons } }: { state: AppState }) => 
 (
     <Router>
         <div>
@@ -22,19 +21,8 @@ const AppComponent = () =>
                     </NavLink>
                 ))}
             </div>
-
-            {/* https://epic-spinners.epicmax.co/#/ */}
-            <div className="fingerprint-spinner spinner">
-                <div className="spinner-ring"></div>
-                <div className="spinner-ring"></div>
-                <div className="spinner-ring"></div>
-                <div className="spinner-ring"></div>
-                <div className="spinner-ring"></div>
-                <div className="spinner-ring"></div>
-                <div className="spinner-ring"></div>
-                <div className="spinner-ring"></div>
-                <div className="spinner-ring"></div>
-            </div>
+            
+            <Spinner />
 
             <Route render={({location}) => (
                 <TransitionGroup>
@@ -44,7 +32,11 @@ const AppComponent = () =>
                         classNames="fade"
                     >
                         <Switch location={location}>
-                            <Route exact path='/' component={Hero} />
+                            <Route
+                                exact
+                                path='/'
+                                render={(props) => <Hero icons={icons} verb="stuff" />}
+                            />
                             <Route path="/about" component={About} />
                             <Route path="/portfolio" component={Portfolio} />
                             <Route path="/contact" component={Contact} />
