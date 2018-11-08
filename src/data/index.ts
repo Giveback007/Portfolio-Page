@@ -1,3 +1,9 @@
+export const links = [
+    ['/about', 'About'],
+    ['/portfolio', 'Portfolio'],
+    ['/contact', 'Contact']
+];
+
 export const verbs = [
     'work', 'play', 'create',
     'make', 'build', 'design',

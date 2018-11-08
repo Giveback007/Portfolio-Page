@@ -8,7 +8,7 @@ export const initState = (() => {
     iterate(5).for(() => iconsNames.push(getNewDevIcon(iconsNames)));
     
     const icons = iconsNames.map((name) => ({ name, anim: false }));
-    const verb = { str: verbs[rand(0, verbs.length - 1)], class: '', styles: '' };
+    const verb = { string: verbs[rand(0, verbs.length - 1)], timing: 0, sequence: 0 };
     return { icons, verb };
 })();
 

@@ -1,8 +1,7 @@
 import React = require("react");
 import { AppState } from "../@types";
 
-type DevIconsProps = { icons: AppState['icons'] };
-export function DevIcons({ icons }: DevIconsProps) {
+export function HeroDevIcons({ icons }: { icons: AppState['icons'] }) {
     const iconElms = icons.map(({ name, anim }, i) => 
         <div key={i} className={`icon${anim ? ' icon_animate' : ''}`}>
             <i  className={`devicon-${name}`}></i>
@@ -10,4 +9,4 @@ export function DevIcons({ icons }: DevIconsProps) {
     );
 
     return <div className='hero_icons'>{iconElms}</div>;
-} 
+}

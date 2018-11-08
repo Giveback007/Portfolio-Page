@@ -1,20 +1,18 @@
 import React = require("react");
 import { AppState } from "../@types";
-import { DevIcons } from "./dev-icons.component";
+import { HeroDevIcons } from "./hero-dev-icons.component";
+import { HeroVerb } from "./hero-verb.component";
 
-type HeroProps = { icons: AppState['icons']; verb: string };
+type HeroProps = { icons: AppState['icons']; verb: AppState['verb'] };
 export const Hero = ({ icons, verb }: HeroProps) => (
-    <div className="page hero">
-        <section className='hero_center'>
-            <DevIcons icons={icons}/>
+    <div className="hero_page page center_parent">
+        <section className='hero_content center'>
+            <HeroDevIcons icons={icons}/>
 
             <h1>Hi, I'm Dave</h1>
             <h3>Software Developer</h3>
 
-            <div className='hero_verb'>
-                <div>I like to</div>
-                <div id='hero_verb-word'>{verb}</div>
-            </div>
+            <HeroVerb { ...verb }/>
         </section>
 
         <a href='#about' className='hero_arrow-down nav_anchor'>

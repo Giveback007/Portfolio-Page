@@ -5,12 +5,12 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Hero } from "./hero.component";
 import { Spinner } from "./spinner.component";
 import { AppState } from "../@types";
+import { links } from "../data";
 
-if (1) console.clear();
+// DELETE
+console.clear();
 
-const links = [['/about', 'About'], ['/portfolio', 'Portfolio'], ['/contact', 'Contact']]
-
-const AppComponent = ({ state: { icons } }: { state: AppState }) => 
+const AppComponent = ({ icons, verb }: AppState) => 
 (
     <Router>
         <div>
@@ -22,9 +22,9 @@ const AppComponent = ({ state: { icons } }: { state: AppState }) =>
                 ))}
             </div>
             
-            <Spinner />
+            {/* <Spinner /> */}
 
-            <Route render={({location}) => (
+            <Route render={({ location }) => (
                 <TransitionGroup>
                     <CSSTransition
                         key={location.key}
@@ -35,7 +35,7 @@ const AppComponent = ({ state: { icons } }: { state: AppState }) =>
                             <Route
                                 exact
                                 path='/'
-                                render={(props) => <Hero icons={icons} verb="stuff" />}
+                                render={(props) => <Hero { ...{ icons, verb } } />}
                             />
                             <Route path="/about" component={About} />
                             <Route path="/portfolio" component={Portfolio} />
