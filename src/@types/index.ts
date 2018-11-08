@@ -1,3 +1,3 @@
-import { initState } from "../store";
+import { initState } from "../store/store";
 
-export type AppState = typeof initState;
+export type State = typeof initState;

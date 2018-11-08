@@ -1,4 +1,4 @@
-import { initAppState } from "@giveback007/proxy-state";
+
 import { iterate, rand } from "@giveback007/util-lib";
 import { getNewDevIcon } from "../util";
 import { verbs } from "../data";
@@ -11,7 +11,3 @@ export const initState = (() => {
     const verb = { string: verbs[rand(0, verbs.length - 1)], timing: 0, sequence: 0 };
     return { icons, verb };
 })();
-
-// Here I am experimenting with my own state management tool
-export const stateObserver = initAppState(initState);
-export const appState = stateObserver.state;

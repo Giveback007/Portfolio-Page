@@ -1,24 +1,17 @@
 import React = require("react");
-import ReactDOM = require("react-dom");
 import { App } from "./components/app.component";
+import { initStateAndRender } from '@giveback007/mutable-react-state';
 import "./index.scss";
-import { appState, stateObserver, animTopIcons, animVerbWord } from "./store/index";
+import { initState } from "./store/store";
+import { animTopIcons, animVerbWord } from "./util/hero-animations";
+// import { appState, stateObserver, animTopIcons, animVerbWord } from "./store/index";
 
 // For Quokka.js //
 if (!document.getElementById('app-root'))
     document.body.innerHTML += '<div id="app-root"></div>';
 
-class RenderApp extends React.Component {
-    state = appState;
-    
-    componentDidMount() {
-        stateObserver.sub((state) => this.setState(state));
+// Here I am experimenting with my own state management tool
+const store = initStateAndRender(<App />, document.getElementById('root'), initState);
 
-        animTopIcons(0, appState);
-        animVerbWord(-1, 0, 100, appState);
-    }
-    
-    render = () => <App { ...this.state }/>;
-}
-
-ReactDOM.render(<RenderApp />, document.getElementById('root'));
+animTopIcons(0, store.state);
+animVerbWord(-1, 0, 100, store.state);

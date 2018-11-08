@@ -1,10 +1,10 @@
-import { AppState } from "../@types";
+import { State } from "../@types";
 import { iterate, wait } from "@giveback007/util-lib";
-import { getNewDevIcon, genNewRandIdx } from "../util";
+import { getNewDevIcon, genNewRandIdx } from ".";
 import { verbs } from "../data";
 
 // TODO this should use the genNewRandIdx() instead
-export async function animTopIcons(round, state: AppState) {
+export async function animTopIcons(round, state: State) {
     let time = 300;
     const { icons } = state;
     
@@ -33,7 +33,7 @@ function calcTimingForNextLoop(loop: number, time: number) {
     return nextTime > 750 ? 750 : nextTime;
 }
 
-export async function animVerbWord(prevIdx: number, loop: number, time: number, state: AppState) {
+export async function animVerbWord(prevIdx: number, loop: number, time: number, state: State) {
     const n = genNewRandIdx(prevIdx, verbs.length - 1);
 
     const { verb } = state;

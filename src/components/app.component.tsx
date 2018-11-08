@@ -3,14 +3,12 @@ import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-do
 import React = require("react");
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Hero } from "./hero.component";
-import { Spinner } from "./spinner.component";
-import { AppState } from "../@types";
 import { links } from "../data";
 
 // DELETE
 console.clear();
 
-const AppComponent = ({ icons, verb }: AppState) => 
+const AppComponent = () => 
 (
     <Router>
         <div>
@@ -32,11 +30,7 @@ const AppComponent = ({ icons, verb }: AppState) =>
                         classNames="fade"
                     >
                         <Switch location={location}>
-                            <Route
-                                exact
-                                path='/'
-                                render={(props) => <Hero { ...{ icons, verb } } />}
-                            />
+                            <Route exact path='/' component={Hero} />
                             <Route path="/about" component={About} />
                             <Route path="/portfolio" component={Portfolio} />
                             <Route path="/contact" component={Contact} />
