@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@giveback007/mutable-react-state": "0.0.5",
-    "@giveback007/util-lib": "0.2.1",
+    "@giveback007/util-lib": "0.3.0",
     "react": "16.6.1",
     "react-dom": "16.6.1",
     "react-router-dom": "4.3.1",

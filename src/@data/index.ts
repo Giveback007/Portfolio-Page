@@ -1,7 +1,7 @@
 export const links = [
-    ['/about', 'About'],
     ['/portfolio', 'Portfolio'],
-    ['/contact', 'Contact']
+    ['/about', 'About'],
+    ['/contact', 'Contact'],
 ];
 
 export const verbs = [

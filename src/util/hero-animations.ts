@@ -1,10 +1,10 @@
 import { State } from "../@types";
-import { iterate, wait } from "@giveback007/util-lib";
-import { getNewDevIcon, genNewRandIdx } from ".";
-import { verbs } from "../data";
+import { iterate, wait, newRandIdx } from "@giveback007/util-lib";
+import { getNewDevIcon } from ".";
+import { verbs } from "../@data";
 
-// TODO this should use the genNewRandIdx() instead
 export async function animTopIcons(round, state: State) {
+    if (state.route && state.route !== '/') return;
     let time = 300;
     const { icons } = state;
     
@@ -14,7 +14,7 @@ export async function animTopIcons(round, state: State) {
         const name = getNewDevIcon(icons.map(({ name }) => name))
         icons[round] = { name, anim: true };
     } else {
-        time = 2000;
+        time = 1500;
         round = -1;
     }
     
@@ -34,7 +34,8 @@ function calcTimingForNextLoop(loop: number, time: number) {
 }
 
 export async function animVerbWord(prevIdx: number, loop: number, time: number, state: State) {
-    const n = genNewRandIdx(prevIdx, verbs.length - 1);
+    if (state.route && state.route !== '/') return;
+    const n = newRandIdx(prevIdx, verbs.length - 1);
 
     const { verb } = state;
     

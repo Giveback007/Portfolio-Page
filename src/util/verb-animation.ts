@@ -1,6 +1,5 @@
-import { genNewRandIdx } from ".";
-import { verbs } from "../data";
-import { wait } from "@giveback007/util-lib";
+import { verbs } from "../@data";
+import { wait, newRandIdx } from "@giveback007/util-lib";
 
 function calcTimingForNextLoop(loop: number, time: number) {
     let nextTime: number;
@@ -25,7 +24,7 @@ function calcTimingForNextLoop(loop: number, time: number) {
 
 function animVerbWord(prevIdx, loop, time) {
     const word = document.getElementById('hero_verb-word');
-    const n = genNewRandIdx(prevIdx, verbs.length - 1);
+    const n = newRandIdx(prevIdx, verbs.length - 1);
     word.innerHTML = verbs[n];
 
     word.classList.add('anim0');
