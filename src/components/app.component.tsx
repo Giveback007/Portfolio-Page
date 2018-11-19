@@ -1,25 +1,28 @@
-import { hot } from "react-hot-loader";
-import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
 import React = require("react");
+import { BrowserRouter as Router, NavLink, Route, RouteComponentProps, Switch } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { Hero } from "./hero.component";
 import { links } from "../@data";
-import { Portfolio } from "./portfolio.component";
 import { updateRoute } from "../state";
+import { Hero } from "./hero.component";
+import { PortfolioComponent } from "./portfolio.component";
+
+const LinkComponent = ({ i, link }: { i: number, link: string[] }) => (
+    <NavLink key={i} to={link[0]} activeClassName="active">
+        <div className="btn">{link[1]}</div>
+    </NavLink>
+);
 
 const Links = () => (
     <div className="routes">
-        {links.map((link, i) => (
-            <NavLink key={i} to={link[0]} activeClassName="active">
-                <div className="btn">{link[1]}</div>
-            </NavLink>
-        ))}
+        {links.map((link, i) => <LinkComponent key={i} {...{ link, i }} />)}
     </div>
-)
+);
 
-const RenderRoutes = () => (
-    <Route render={({ location }) => {
-        updateRoute(location.pathname)
+const RenderRoutes = () => {
+
+    const routeRenderFunct = ({ location }: RouteComponentProps) => {
+        updateRoute(location.pathname);
+
         return (
             <TransitionGroup>
                 <CSSTransition
@@ -28,18 +31,20 @@ const RenderRoutes = () => (
                     classNames="fade"
                 >
                     <Switch location={location}>
-                        <Route exact path='/' component={Hero} />
+                        <Route exact={true} path="/" component={Hero} />
                         <Route path="/about" component={About} />
-                        <Route path="/portfolio" component={Portfolio} />
+                        <Route path="/portfolio" component={PortfolioComponent} />
                         <Route path="/contact" component={Contact} />
                     </Switch>
                 </CSSTransition>
             </TransitionGroup>
-        )
-    }}/>
-);
+        );
+    };
 
-const AppComponent = () => 
+    return <Route render={routeRenderFunct}/>;
+};
+
+const AppComponent = () =>
 (
     <Router>
         <div>
@@ -50,7 +55,7 @@ const AppComponent = () =>
     </Router>
 );
 
-export const About = () => <div className="page about"><h1>About</h1></div>
-export const Contact = () => <div className="page contact"><h1>Contact</h1></div>
+export const About = () => <div className="page about"><h1>About</h1></div>;
+export const Contact = () => <div className="page contact"><h1>Contact</h1></div>;
 
-export const App = hot(module)(AppComponent);
+export const App = AppComponent;

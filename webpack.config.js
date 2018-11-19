@@ -1,20 +1,18 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 
 module.exports = {
     mode: "development",
-    devtool: "inline-source-map",
+    devtool: "source-map",
     devServer: {
-        historyApiFallback: true,
         contentBase: __dirname + '/dist/index.html',
         hot: true,
         port: 9000
     },
-    entry: {
-        app:"./src/index.tsx",
-        // vendor: ["react", "react-dom"]
-    },
+    entry: { app:"./src/index.tsx", },
     output: {
         path: __dirname + "/dist",
         filename: "[name].bundle.js"
@@ -26,64 +24,57 @@ module.exports = {
     module: {
         rules: [
             { 
-                test: /\.tsx?$/, 
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
                 use: [{
-                    loader: 'babel-loader',
-                    options: {
-                        // This is a feature of `babel-loader` for webpack (not Babel itself).
-                        // It enables caching results in ./node_modules/.cache/babel-loader/
-                        // directory for faster rebuilds.
-                        cacheDirectory: true,
-                        plugins: ['react-hot-loader/babel']
-                    }
-                }, {
                     loader: 'ts-loader',
-                    options: {
-                        experimentalWatchApi: true,
-                        transpileOnly: true
-                    }
-                }], 
-                
+                    options: { transpileOnly: true }
+                }],
             }, {
-                test: /.scss$/,
+                test: /\.scss$/,
                 use: [{
                     loader: "style-loader" // creates style nodes from JS strings
                 }, {
                     loader: "css-loader", // translates CSS into CommonJS
                     options: { sourceMaps: true }
-                }, //{
-                //     loader: 'resolve-url-loader', // fixes the url("...") ? <- needs testing
-                //     options: { }
-                // }, 
-                {
+                }, {
                     loader: "sass-loader", // compiles Sass to CSS
-                    options: {
-                        // implementation: require("sass"),
-                        sourceMaps: true
-                    }
-                }
-            ]
-            }, {
-                test: /\.(jpg|png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                    options: { sourceMaps: true }
+                }]
+            }, { // png files don't load, need fix
+                test: /\.(jpg|png||woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 use: [{
-                    loader: "file-loader",
+                    loader: 'url-loader',
                     options: {
-                        name: "assets/[name].[ext]",
+                        limit: 100000
                     }
                 }]
-            }
+            },
+            // Alternatively use file-loader
+            // {
+            //     test: /\.(jpg|png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            //     use: [{
+            //         loader: "file-loader",
+            //         options: {
+            //             name: "assets/[name].[ext]",
+            //         }
+            //     }]
+            // }
         ]
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
+            title: 'Dovydas Portfolio',
             template: './src/index.html',
             filename: 'index.html',
             favicon: 'src/favicon.png'
         }),
         // For HMR, makes it easier to see which dependencies are being patched
         new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new ForkTsCheckerWebpackPlugin(),
+        new ForkTsCheckerNotifierWebpackPlugin({ excludeWarnings: true }),
     ],
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.

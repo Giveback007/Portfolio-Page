@@ -1,14 +1,16 @@
-import React = require("react");
-import { State } from "../@types";
 import { connect } from "@giveback007/mutable-react-state";
+import React = require("react");
+import { Icon, State } from "../@types";
+
+const Icon = ({ name, anim }: Icon) => (
+    <div className={`icon${anim ? " icon_animate" : ""}`}>
+        <i  className={`devicon-${name}`}/>
+    </div>
+);
 
 export const HeroDevIcons = connect((s: State) => s)(
-({ icons }) => {
-    const iconElms = icons.map(({ name, anim }, i) => 
-        <div key={i} className={`icon${anim ? ' icon_animate' : ''}`}>
-            <i  className={`devicon-${name}`}></i>
-        </div>
-    )
-
-    return <div className='hero_icons'>{iconElms}</div>;
-});
+({ icons }) => (
+    <div className="hero_icons">
+        {icons.map((icon, i) => <Icon key={i} {...icon}/>)}
+    </div>
+));

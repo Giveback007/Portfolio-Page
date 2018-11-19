@@ -3,18 +3,18 @@ export type Project = {
     image: string;
     liveUrl: string;
     srcUrl: string;
-}
+};
 
 export type Icon = {
     name: string;
     anim: boolean;
-}
+};
 
 export type Verb = {
-    string: string;
+    str: string;
     timing: number;
     sequence: number;
-}
+};
 
 export type State = {
     portfolio: {

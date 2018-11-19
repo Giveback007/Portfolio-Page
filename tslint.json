@@ -1,0 +1,20 @@
+{
+    "defaultSeverity": "warn",
+    "extends": [
+        "tslint-config-prettier",
+        "tslint:recommended",
+        "tslint-react"
+    ],
+    "jsRules": {},
+    "rules": {
+        "interface-name": [true, "never-prefix"],
+        "interface-over-type-literal": false,
+        "jsx-no-lambda": false,
+        "curly": [true, "ignore-same-line"]
+        // "object-literal-sort-keys": false,
+        // "member-access": false,
+        // "ordered-imports": [false],
+        // "object-literal-key-quotes": [true, "as-needed"]
+    },
+    "rulesDirectory": []
+}
